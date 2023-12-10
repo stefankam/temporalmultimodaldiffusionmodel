@@ -32,11 +32,11 @@ where `Dense` represents the dense layer with a sigmoid activation function. \(Y
 
 ## Matching Dimensions
 
-In the code, you correctly reshape the merged_output to have shape \((1,2)\) before feeding it into the LSTM layer. This matches the shape requirement for the LSTM layer. The LSTM layer then outputs \((128,)\) at each time step, capturing temporal information. The output layer takes the temporal output and produces \((1,)\), which is the final prediction for each time step.
+In the code, we reshape the merged_output to have shape \((1,2)\) before feeding it into the LSTM layer. This matches the shape requirement for the LSTM layer. The LSTM layer then outputs \((128,)\) at each time step, capturing temporal information. The output layer takes the temporal output and produces \((1,)\), which is the final prediction for each time step.
 
 ## Usage
 
-To use this code for your own multimodal temporal diffusion model, follow the instructions below:
+To use this code for your own temporal multimodal diffusion model, follow the instructions below:
 
 1. Clone this repository to your local machine.
 2. Install the required dependencies.
