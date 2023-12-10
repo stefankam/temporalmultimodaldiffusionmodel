@@ -1,6 +1,4 @@
-# temporalmultimodaldiffusionmodel
-
-# Multimodal Temporal Diffusion Model
+# Temporal Multimodal Diffusion Model
 
 ## Overview
 
