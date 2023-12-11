@@ -2,7 +2,40 @@
 
 ## Overview
 
-This repository contains the code for implementing a temporal diffusion model for multimodal data, which aims to propagate information through time steps while considering both image and text data. In this README, we will describe the mathematical model and explain how the dimensions should match.
+This repository contains the code for implementing a temporal diffusion model for multimodal data, which aims to propagate information through time steps while considering both image and text data. In this README, we will describe the mathematical model and explain how the dimensions should match.  Here are some potential anomalies that we might want to consider:
+
+- Missing Data:
+
+  - Text Data: Missing or incomplete patient information in the text data, such as important medical history, age, or diagnosis information.
+  - Image Data: Missing or incomplete MRI images that should be associated with patient records. This could indicate data loss during the upload process.
+
+- Data Entry Errors:
+
+  - Text Data: Incorrectly entered or typographical errors in the patient's biological information, which could lead to incorrect diagnoses or medical decisions.
+  - Image Data: Image artifacts or corruption due to errors during image upload, potentially impacting the quality and usefulness of the MRI data.
+
+- Data Outliers:
+
+  - Text Data: Outliers in patient data, such as extreme values for biological parameters, which could indicate data entry errors or unusual medical conditions.
+  - Image Data: Outliers in MRI images that deviate significantly from the expected range of values, which might indicate image artifacts or problems with the imaging equipment.
+
+- Temporal Anomalies:
+
+  - Text Data: Irregularities in the timing of data entries, such as unexpected gaps or delays in recording patient information.
+  - Image Data: Temporal inconsistencies in the timing of image uploads, such as images taken out of sequence or with unusual time intervals between them.
+
+- Cross-Modal Anomalies:
+
+  - Image-Text Mismatch: Anomalies where the content of the text data and associated MRI images do not align or make sense together. For example, text data indicating a patient's age does not match the apparent age in the images.
+  - Inconsistent Metadata: Inconsistencies between metadata associated with text and image data, such as discrepancies in patient identifiers or timestamps.
+
+- Duplicate Data:
+
+  - Identical or near-identical patient records or MRI images appearing multiple times in the dataset, which could indicate data duplication or errors in data management.
+
+- Data Drift:
+
+  - Gradual changes in the distribution of data over time, such as shifts in the demographics of patients or changes in the characteristics of MRI images. Detecting and monitoring data drift is essential for maintaining the accuracy of predictive models.
 
 ## Mathematical Model
 
