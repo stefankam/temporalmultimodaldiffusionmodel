@@ -20,7 +20,22 @@ The LSTM layer is applied to the concatenated multimodal features, aiming to cap
 
 \[H_t = LSTM(H_{t-1}, [X_t, T_t])\]
 
-where \([X_t, T_t]\) represents the concatenated features at time step \(t\). \(H_t\) has shape \((128,)\) since you have defined LSTM(128).
+where \([X_t, T_t]\) represents the concatenated features at time step \(t\). \(H_t\) has shape \((128,)\) since we have defined LSTM(128).
+
+Here's how the LSTM layer works in this context:
+
+- Temporal Modeling Within Each Modality (Images and Text):
+
+For images, the LSTM layer captures temporal dependencies within the image sequence. If we have a sequence of images over time (e.g., frames from a video), the LSTM layer can capture how information in the images evolves from one frame to the next.
+
+For text, the LSTM layer captures temporal dependencies within the text sequence. It can capture how the meaning of a sentence or sequence of words changes over time, especially in cases where text data has a time-based order.
+
+- Concatenation of Features at Each Time Step:
+
+Before passing the data through the LSTM layer, the code concatenates the features from both modalities (image and text) at each time step. This means that at each time step, the LSTM receives a combined feature vector that includes information from both the image and text.
+
+The concatenation is performed to allow the model to capture interactions and dependencies between image and text data at each time step.
+However, it's important to note that the provided code does not explicitly model temporal dependencies that might exist between different time steps in the text or how text and image data interact over time. To capture such interactions, we would need a more complex multimodal architecture that considers cross-modal dependencies and temporal relationships explicitly.
 
 ### Output Layer
 
